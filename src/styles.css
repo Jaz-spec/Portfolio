@@ -1,3 +1,18 @@
-h1 {
+body {
+	height: 100vh;
+}
+
+header {
+	padding-top: 30vh;
 	text-align: center;
+}
+
+h1,
+h2,
+h4 {
+	margin: 0;
+}
+
+h1 {
+	font-size: 100px;
 }
