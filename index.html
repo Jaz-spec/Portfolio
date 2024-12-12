@@ -3,20 +3,56 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Atma:wght@300;400;500;600;700&family=Luckiest+Guy&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+			rel="stylesheet" />
 		<link rel="stylesheet" href="/src/styles.css" />
 		<title>Portfolio</title>
 	</head>
 	<body>
-		<header>
-			<h1>Jasmine Maslen</h1>
-			<h2>Something else here</h2>
-			<h4>Front End Web developer</h4>
-		</header>
+		<div class="container">
+			<div class="scroll-area title-page">
+				<h1>JASMINE MASLEN</h1>
+				<h3>Something else here</h3>
+				<h4>Front End Web developer</h4>
+			</div>
 
-		<div class="nav-links">
-			<h3><a href="/about.html">About</a></h3>
-			<h3><a href="/projects.html">Projects</a></h3>
-			<h3><a href="/contact.html">Contact</a></h3>
+			<div class="scroll-area about">
+				<h2>ABOUT</h2>
+				<p>Why I want to be a developer</p>
+			</div>
+
+			<div class="scroll-area projects">
+				<h2>PROJECTS</h2>
+				<div class="project-container">
+					<div class="about-project">
+						<div class="project-img"></div>
+						<div class="project-description">
+							This is filler text about the project
+						</div>
+					</div>
+					<div class="project-list">
+						<ul>
+							<li>Weather App</li>
+							<li>World Clock</li>
+							<li>Podcast Page</li>
+							<li>Ball Catch</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="scroll-area contact">
+				<h2>CONTACT</h2>
+				<a
+					href="https://www.linkedin.com/in/jasmine-maslen-247b88267/"
+					target="_blank"
+					>LinkedIn</a
+				>
+				<a href="https://github.com/Jaz-spec" target="_blank">GitHub</a>
+			</div>
 		</div>
 	</body>
 </html>
