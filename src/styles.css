@@ -1,44 +1,67 @@
 :root {
 	--background-color1: black;
-	--background-color2: #31202a;
 	--text-color: white;
 	--neon1: rgb(0, 204, 255);
-	--neon1-highlight: rgb(214, 246, 255);
+	--neon2: rgb(234, 0, 255);
 }
 
-/*html {
-	overflow-y: scroll;
-	scroll-snap-type: y mandatory;
-	scroll-snap-stop: always;
-}*/
+/*SITE SPACING*/
+html {
+	overflow-x: scroll;
+	overflow-y: hidden;
+	scroll-snap-type: x mandatory;
+}
 
 body {
+	max-height: 100vh;
 	margin: 0;
-	background-color: var(--background-color1);
-	color: var(--text-color);
+
 	font-family: "Atma", system-ui;
+	color: var(--text-color);
+	background-color: var(--background-color1);
 }
 
 .container {
-	margin: 0 auto;
-	max-width: 70%;
+	display: grid;
+	grid-auto-flow: column;
 }
 
 .scroll-area {
-	/*scroll-snap-align: center;*/
-	height: 120vh;
-	padding: 40px 100px;
+	width: 100vw;
+	height: 100vh;
+
+	max-width: 60%;
+	margin: 100px auto auto auto;
+
+	scroll-snap-align: center;
 }
 
-.about,
-.projects,
-.contact {
+.title-flex {
 	display: flex;
 }
 
+.content {
+	height: 70vh;
+	width: 100%;
+	max-height: 70vh;
+
+	display: grid;
+	grid-template-rows: 1fr auto;
+}
+
+.buttons {
+	grid-row: 2;
+	display: flex;
+	justify-content: space-between;
+}
+
+/*NEON EFFECTS*/
 h1 {
 	padding: 20px 40px;
 	text-align: center;
+	margin-bottom: 12px;
+
+	position: relative;
 
 	font-size: 80px;
 	font-weight: 400;
@@ -53,20 +76,19 @@ h1 {
 		0 0 40px var(--neon1), inset 0 0 5px var(--neon1),
 		inset 0 0 10px var(--neon1), inset 0 0 20px var(--neon1),
 		inset 0 0 30px var(--neon1);
-	position: relative;
 }
 
 h1::before {
 	content: "";
 	position: absolute;
 	background: var(--neon1);
-	top: 130%;
+	top: 160%;
 	left: 0;
 	width: 100%;
 	height: 100%;
 
-	transform: perspective(2em) rotateX(50deg) scale(1, 0.4);
-	filter: blur(4em);
+	transform: perspective(1em) rotateX(40deg) scale(1, 0.4);
+	filter: blur(5em);
 }
 
 h2 {
@@ -75,7 +97,8 @@ h2 {
 	text-orientation: upright;
 	font-size: 4rem;
 	font-weight: 400;
-	max-height: 70vh;
+	height: 70vh;
+	position: relative;
 
 	color: var(--text-color);
 	text-shadow: 0 0 5px var(--neon1), 0 0 10px var(--neon1),
@@ -87,12 +110,6 @@ h2 {
 		0 0 40px var(--neon1), inset 0 0 5px var(--neon1),
 		inset 0 0 10px var(--neon1), inset 0 0 20px var(--neon1),
 		inset 0 0 30px var(--neon1);
-	position: relative;
-}
-
-.projects h2,
-.contact h2 {
-	font-size: 3rem;
 }
 
 h2::before {
@@ -107,13 +124,72 @@ h2::before {
 	transform: perspective(2em) rotateX(60deg) scale(1, 0.05);
 	filter: blur(4em);
 }
-.project-container {
-	display: flex;
+
+.next-btn {
+	opacity: 0.8;
+	transition: opacity 200ms ease-in-out;
+	height: 90px;
+	width: 180px;
+	position: relative;
+	font-size: 25px;
+	color: var(--text-color);
+	background-color: transparent;
+	text-shadow: 0 0 5px var(--neon2), 0 0 10px var(--neon2),
+		0 0 20px var(--neon2), 0 0 40px var(--neon2), 0 0 60px var(--neon2);
+
+	border: solid 5px var(--text-color);
+	border-radius: 15px;
+	box-shadow: 0 0 5px var(--neon2), 0 0 10px var(--neon2), 0 0 20px var(--neon2),
+		0 0 40px var(--neon2), inset 0 0 5px var(--neon2),
+		inset 0 0 10px var(--neon2), inset 0 0 20px var(--neon2);
 }
 
+.next-btn::before {
+	content: "";
+	position: absolute;
+	background: var(--neon2);
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transform: perspective(2em) translateY(155%) rotateX(50deg) scale(1, 0.05);
+	filter: blur(4em);
+}
+
+.next-btn:hover {
+	opacity: 1;
+}
+
+h3 {
+	font-size: 30px;
+	background-image: linear-gradient(var(--neon1) 0%, var(--text-color) 70%);
+	background-clip: text;
+	color: transparent;
+	margin-top: 0;
+}
+
+.projects h2,
+.contact h2 {
+	font-size: 3rem;
+}
+
+/*TITLE PAGE*/
+.title-next {
+	position: absolute;
+	bottom: 175px;
+	right: 200px;
+}
+
+/*ABOUT PAGE*/
+
+/*PROJECT PAGE*/
+
+.project-main {
+	display: flex;
+}
 .project-img {
-	width: 600px;
-	height: 600px;
+	width: 400px;
+	height: 400px;
 	background-image: linear-gradient(
 			to right,
 			rgba(0, 204, 255, 0.3) 0%,
@@ -127,7 +203,6 @@ h2::before {
 }
 
 .project-list ul {
-	height: 600px;
 	list-style: none;
 	display: flex;
 	flex-direction: column;
@@ -135,7 +210,6 @@ h2::before {
 }
 
 .project-list ul li {
-	padding: 65px 80px;
 	width: 200px;
 	border-top: solid 1px var(--text-color);
 }
