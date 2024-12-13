@@ -3,20 +3,24 @@
 	--text-color: white;
 	--neon1: rgb(0, 204, 255);
 	--neon2: rgb(234, 0, 255);
+	--neon3: rgb(30, 255, 0);
+	--glow-text: #cbf5ff;
 }
 
 /*SITE SPACING*/
 html {
-	overflow-x: scroll;
+	overflow-x: hidden;
 	overflow-y: hidden;
 	scroll-snap-type: x mandatory;
+	scroll-behavior: smooth;
+	scroll-padding: 0 25px;
 }
 
 body {
 	max-height: 100vh;
 	margin: 0;
 
-	font-family: "Atma", system-ui;
+	font-family: Arial;
 	color: var(--text-color);
 	background-color: var(--background-color1);
 }
@@ -28,12 +32,16 @@ body {
 
 .scroll-area {
 	width: 100vw;
-	height: 100vh;
+	height: 90vh;
 
 	max-width: 60%;
 	margin: 100px auto auto auto;
 
 	scroll-snap-align: center;
+
+	animation: switch-screens linear;
+	animation-timeline: view(x);
+	animation-duration: 1s;
 }
 
 .title-flex {
@@ -55,6 +63,22 @@ body {
 	justify-content: space-between;
 }
 
+.contact-links {
+	display: flex;
+	flex-direction: column;
+}
+
+@keyframes switch-screens {
+	to {
+		scale: 0.5;
+		opacity: 0;
+	}
+
+	from {
+		scale: 1.5;
+		opacity: 2.5;
+	}
+}
 /*NEON EFFECTS*/
 h1 {
 	padding: 20px 40px;
@@ -128,8 +152,11 @@ h2::before {
 .next-btn {
 	opacity: 0.8;
 	transition: opacity 200ms ease-in-out;
-	height: 90px;
-	width: 180px;
+	width: 160px;
+	height: 80px;
+	line-height: 80px;
+	text-decoration: none;
+	text-align: center;
 	position: relative;
 	font-size: 25px;
 	color: var(--text-color);
@@ -156,21 +183,45 @@ h2::before {
 	filter: blur(4em);
 }
 
-.next-btn:hover {
+.contact-button {
+	opacity: 0.8;
+	transition: opacity 200ms ease-in-out;
+	width: 160px;
+	height: 80px;
+	line-height: 80px;
+	text-decoration: none;
+	text-align: center;
+	position: relative;
+	margin-bottom: 50px;
+	font-size: 25px;
+	color: var(--text-color);
+	background-color: transparent;
+	text-shadow: 0 0 5px var(--neon3), 0 0 10px var(--neon3),
+		0 0 20px var(--neon3), 0 0 40px var(--neon3), 0 0 60px var(--neon3);
+
+	border: solid 5px var(--text-color);
+	border-radius: 15px;
+	box-shadow: 0 0 5px var(--neon3), 0 0 10px var(--neon3), 0 0 20px var(--neon3),
+		0 0 40px var(--neon3), inset 0 0 5px var(--neon3),
+		inset 0 0 10px var(--neon3), inset 0 0 20px var(--neon3);
+}
+
+.next-btn:hover,
+.contact-button:hover {
 	opacity: 1;
+}
+
+.next-btn:focus,
+.contact-button:hover {
+	outline: none;
 }
 
 h3 {
 	font-size: 30px;
-	background-image: linear-gradient(var(--neon1) 0%, var(--text-color) 70%);
+	background-image: linear-gradient(var(--neon1) 0%, var(--glow-text) 70%);
 	background-clip: text;
 	color: transparent;
 	margin-top: 0;
-}
-
-.projects h2,
-.contact h2 {
-	font-size: 3rem;
 }
 
 /*TITLE PAGE*/
@@ -181,10 +232,42 @@ h3 {
 }
 
 /*ABOUT PAGE*/
+.about-text1,
+.about-text2 {
+	width: 50%;
+}
+
+.about-text2 {
+	float: right;
+	text-align: right;
+
+	background-image: linear-gradient(
+		to right,
+		var(--glow-text) 0%,
+		var(--text-color) 100%
+	);
+	background-clip: text;
+	color: transparent;
+}
+
+.about-text1 {
+	background-image: linear-gradient(
+		to right,
+		rgba(0, 204, 255, 0.5) 0%,
+		var(--glow-text) 20%,
+		var(--glow-text) 100%
+	);
+	background-clip: text;
+	color: transparent;
+}
 
 /*PROJECT PAGE*/
 
 .project-main {
+	display: flex;
+	flex-direction: column;
+}
+.about-project {
 	display: flex;
 }
 .project-img {
@@ -202,14 +285,33 @@ h3 {
 	border-radius: 15px;
 }
 
-.project-list ul {
-	list-style: none;
+.project-list-container {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
+	margin-left: 10px;
+}
+.project-list {
+	padding: 25px;
+	width: 200px;
+	border: solid 1px var(--text-color);
+	border-radius: 15px;
+	color: white;
+	text-decoration: none;
 }
 
-.project-list ul li {
-	width: 200px;
-	border-top: solid 1px var(--text-color);
+.project-list:hover {
+	scale: 1.01;
+}
+
+.project-description {
+	margin-top: 10px;
+	background-image: linear-gradient(
+		to right,
+		rgba(0, 204, 255, 0.5) 0%,
+		var(--glow-text) 20%,
+		var(--glow-text) 100%
+	);
+	background-clip: text;
+	color: transparent;
 }
