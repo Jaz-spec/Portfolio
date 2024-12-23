@@ -124,7 +124,7 @@ h2 {
 	color: var(--text-color);
 
 	width: 6em;
-	line-height: 80px;
+	line-height: 8rem;
 
 	opacity: 0.8;
 	transition: opacity 200ms ease-in-out;
@@ -258,7 +258,7 @@ h3 {
 }
 .project-list {
 	padding: 2.5rem;
-	width: 200px;
+	width: 90%;
 	border: solid 1px var(--text-color);
 	border-radius: 15px;
 	color: white;
@@ -280,6 +280,7 @@ h3 {
 	);
 	background-clip: text;
 	color: transparent;
+	max-width: 80ch;
 }
 
 /*CONTACT PAGE*/
