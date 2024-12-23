@@ -20,31 +20,31 @@ html {
 }
 
 body {
-	max-height: 100vh;
 	margin: 0;
+	max-height: 100vh;
 
+	font-size: 1.5rem;
 	font-family: Arial;
 	color: var(--text-color);
+
 	background-color: var(--background-color1);
-	font-size: 1.5em;
 }
 
 .container {
+	height: 90vh;
+
 	display: grid;
 	grid-auto-flow: column;
-	height: 90vh;
 }
 
 .scroll-area {
+	margin: 100px auto;
 	width: 100vw;
 	max-width: 60%;
-	margin: 100px auto;
 
 	display: flex;
 
 	scroll-snap-align: center;
-
-	animation: switch-screens linear;
 }
 
 .scroll-area:focus {
@@ -53,17 +53,20 @@ body {
 
 .content {
 	height: 70vh;
+
 	display: grid;
 	grid-template-rows: 1fr auto;
 }
 
 .first-button {
 	grid-row: 2;
+
 	display: flex;
 	justify-content: end;
 }
 .buttons {
 	grid-row: 2;
+
 	display: flex;
 	justify-content: space-between;
 }
@@ -73,154 +76,109 @@ body {
 	flex-direction: column;
 }
 
-@media (width < 1000px) {
-	.scroll-area {
-		max-width: 90%;
-	}
-
-	.project-img {
-		display: none;
-	}
-	.contact {
-		margin-left: 50px;
-	}
-}
-
-@keyframes switch-screens {
-	to {
-		scale: 0.5;
-	}
-
-	from {
-		scale: 1.5;
-	}
-}
 /*NEON EFFECTS*/
-h1 {
-	padding: 2rem 4rem;
-	text-align: center;
-	margin-bottom: 1.2rem;
+h1,
+h2 {
+	font-weight: 400;
+	color: var(--text-color);
 
 	position: relative;
+	border: solid 5px var(--text-color);
+	border-radius: 15px;
 
-	font-size: 8rem;
-	font-weight: 400;
-
-	color: var(--text-color);
 	text-shadow: 0 0 5px var(--neon1), 0 0 10px var(--neon1),
 		0 0 20px var(--neon1), 0 0 40px var(--neon1), 0 0 60px var(--neon1);
 
-	border: solid 5px var(--text-color);
-	border-radius: 15px;
 	box-shadow: 0 0 5px var(--neon1), 0 0 10px var(--neon1), 0 0 20px var(--neon1),
 		0 0 40px var(--neon1), inset 0 0 5px var(--neon1),
 		inset 0 0 10px var(--neon1), inset 0 0 20px var(--neon1),
 		inset 0 0 30px var(--neon1);
 }
 
+h1 {
+	margin-bottom: 1.2rem;
+	padding: 2rem 4rem;
+
+	font-size: 8rem;
+	text-align: center;
+}
+
+h2 {
+	margin-right: 40px;
+	height: 70vh;
+
+	font-size: 7rem;
+
+	writing-mode: vertical-rl;
+	text-orientation: upright;
+}
+
+.next-btn,
+.contact-button {
+	margin: 5px;
+	padding: 15px auto;
+
+	font-size: 2.5rem;
+	text-decoration: none;
+	text-align: center;
+	color: var(--text-color);
+
+	width: 6em;
+	line-height: 80px;
+
+	opacity: 0.8;
+	transition: opacity 200ms ease-in-out;
+	background-color: transparent;
+
+	border: solid 5px var(--text-color);
+	border-radius: 15px;
+
+	position: relative;
+}
+
+.next-btn {
+	text-shadow: 0 0 5px var(--neon2), 0 0 10px var(--neon2),
+		0 0 20px var(--neon2), 0 0 40px var(--neon2), 0 0 60px var(--neon2);
+
+	box-shadow: 0 0 5px var(--neon2), 0 0 10px var(--neon2), 0 0 20px var(--neon2),
+		0 0 40px var(--neon2), inset 0 0 5px var(--neon2),
+		inset 0 0 10px var(--neon2), inset 0 0 20px var(--neon2);
+}
+.contact-button {
+	margin-bottom: 50px;
+
+	text-shadow: 0 0 5px var(--neon3), 0 0 10px var(--neon3),
+		0 0 20px var(--neon3), 0 0 40px var(--neon3), 0 0 60px var(--neon3);
+
+	box-shadow: 0 0 5px var(--neon3), 0 0 10px var(--neon3), 0 0 20px var(--neon3),
+		0 0 40px var(--neon3), inset 0 0 5px var(--neon3),
+		inset 0 0 10px var(--neon3), inset 0 0 20px var(--neon3);
+}
+
+/*NEON GLOW EFFECTS*/
 h1::before,
-h2::before {
+h2::before,
+.next-btn::before {
 	content: "";
 	position: absolute;
 	background: var(--neon1);
 	left: 0;
 	width: 100%;
 	height: 100%;
-}
-
-h1::before {
-	top: 160%;
-
-	transform: perspective(1em) rotateX(40deg) scale(1, 0.4);
 	filter: blur(5em);
 }
 
-h2 {
-	margin-right: 40px;
-	writing-mode: vertical-rl;
-	text-orientation: upright;
-	font-size: 7rem;
-	font-weight: 400;
-	height: 70vh;
-	position: relative;
-
-	color: var(--text-color);
-	text-shadow: 0 0 5px var(--neon1), 0 0 10px var(--neon1),
-		0 0 20px var(--neon1), 0 0 40px var(--neon1), 0 0 60px var(--neon1);
-
-	border: solid 5px var(--text-color);
-	border-radius: 15px;
-	box-shadow: 0 0 5px var(--neon1), 0 0 10px var(--neon1), 0 0 20px var(--neon1),
-		0 0 40px var(--neon1), inset 0 0 5px var(--neon1),
-		inset 0 0 10px var(--neon1), inset 0 0 20px var(--neon1),
-		inset 0 0 30px var(--neon1);
+h1::before {
+	transform: translateY(160%) perspective(1em) rotateX(40deg) scale(1, 0.4);
 }
 
 h2::before {
-	top: 60%;
-
-	transform: perspective(2em) rotateX(60deg) scale(1, 0.05);
-	filter: blur(4em);
-}
-
-.next-btn {
-	font-size: 2.5rem;
-	padding: 15px auto;
-	width: 6em;
-	margin: 5px;
-	line-height: 80px;
-
-	opacity: 0.8;
-	transition: opacity 200ms ease-in-out;
-
-	text-decoration: none;
-	text-align: center;
-	position: relative;
-	color: var(--text-color);
-	background-color: transparent;
-	text-shadow: 0 0 5px var(--neon2), 0 0 10px var(--neon2),
-		0 0 20px var(--neon2), 0 0 40px var(--neon2), 0 0 60px var(--neon2);
-
-	border: solid 5px var(--text-color);
-	border-radius: 15px;
-	box-shadow: 0 0 5px var(--neon2), 0 0 10px var(--neon2), 0 0 20px var(--neon2),
-		0 0 40px var(--neon2), inset 0 0 5px var(--neon2),
-		inset 0 0 10px var(--neon2), inset 0 0 20px var(--neon2);
+	transform: translateY(60%) perspective(2em) rotateX(60deg) scale(1, 0.05);
 }
 
 .next-btn::before {
-	content: "";
-	position: absolute;
 	background: var(--neon2);
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	transform: perspective(2em) translateY(155%) rotateX(50deg) scale(1, 0.05);
-	filter: blur(4em);
-}
-
-.contact-button {
-	opacity: 0.8;
-	transition: opacity 200ms ease-in-out;
-	width: 160px;
-	height: 80px;
-	line-height: 80px;
-	text-decoration: none;
-	text-align: center;
-	position: relative;
-	margin-bottom: 50px;
-	font-size: 25px;
-	color: var(--text-color);
-	background-color: transparent;
-	text-shadow: 0 0 5px var(--neon3), 0 0 10px var(--neon3),
-		0 0 20px var(--neon3), 0 0 40px var(--neon3), 0 0 60px var(--neon3);
-
-	border: solid 5px var(--text-color);
-	border-radius: 15px;
-	box-shadow: 0 0 5px var(--neon3), 0 0 10px var(--neon3), 0 0 20px var(--neon3),
-		0 0 40px var(--neon3), inset 0 0 5px var(--neon3),
-		inset 0 0 10px var(--neon3), inset 0 0 20px var(--neon3);
+	transform: translateY(155%) perspective(2em) rotateX(40deg) scale(1, 0.15);
 }
 
 .next-btn:hover,
@@ -233,6 +191,7 @@ h2::before {
 	outline: none;
 }
 
+/*TITLE PAGE*/
 h3 {
 	font-size: 2.5rem;
 	font-weight: 200;
@@ -242,7 +201,6 @@ h3 {
 	margin-top: 0;
 }
 
-/*TITLE PAGE*/
 .title-next {
 	grid-row: 2;
 }
@@ -251,17 +209,6 @@ h3 {
 .about-text1,
 .about-text2 {
 	width: 50%;
-}
-
-.about-text2 {
-	float: right;
-	text-align: right;
-
-	background-image: linear-gradient(
-		to right,
-		var(--glow-text) 0%,
-		var(--text-color) 100%
-	);
 	background-clip: text;
 	color: transparent;
 }
@@ -273,8 +220,17 @@ h3 {
 		var(--glow-text) 40%,
 		var(--glow-text) 100%
 	);
-	background-clip: text;
-	color: transparent;
+}
+
+.about-text2 {
+	float: right;
+	text-align: right;
+
+	background-image: linear-gradient(
+		to right,
+		var(--glow-text) 0%,
+		var(--text-color) 100%
+	);
 }
 
 /*PROJECT PAGE*/
@@ -288,14 +244,8 @@ h3 {
 }
 .project-img {
 	width: 400px;
-	background-image: linear-gradient(
-			to right,
-			rgba(0, 204, 255, 0.2) 0%,
-			transparent 50% transparent 100%
-		),
-		url(/src/weatherApp.png);
-	transition-duration: 1s;
-	background-repeat: no-repeat;
+
+	/*background image in js*/
 	background-size: cover;
 	border-radius: 15px;
 }
@@ -307,7 +257,7 @@ h3 {
 	margin-left: 10px;
 }
 .project-list {
-	padding: 25px;
+	padding: 2.5rem;
 	width: 200px;
 	border: solid 1px var(--text-color);
 	border-radius: 15px;
@@ -337,16 +287,31 @@ h3 {
 	margin-right: 400px;
 }
 
+/*RESPONSIVE*/
+
+@media (width < 1000px) {
+	.scroll-area {
+		max-width: 90%;
+	}
+
+	.project-img {
+		width: 100%;
+	}
+	.contact {
+		margin-left: 50px;
+	}
+}
+
 @media (width < 700px) {
 	html {
 		overflow-y: scroll;
 		overflow-x: hidden;
 		scroll-snap-type: y mandatory;
-		width: 334px;
+		width: 100vw;
 	}
 
 	body {
-		position: relative;
+		font-size: small;
 	}
 
 	.container {
@@ -356,7 +321,7 @@ h3 {
 
 	.scroll-area {
 		scroll-snap-align: start;
-		height: 100vh;
+		height: 100dvh;
 		margin: 0 auto;
 		padding-top: 70px;
 		width: 90%;
@@ -371,36 +336,90 @@ h3 {
 		width: 100%;
 	}
 
-	.contact {
-		margin-right: 0;
+	h1 {
+		height: 70vh;
+
+		writing-mode: vertical-rl;
+		text-orientation: upright;
+	}
+
+	.headings {
+		margin-top: 60px;
+		display: flex;
+	}
+
+	h1::before {
+		transform: translateY(60%) perspective(2em) rotateX(60deg) scale(1, 0.05);
+	}
+
+	h1,
+	h2 {
+		font-size: 3rem;
+		padding: 1rem;
+	}
+
+	h3 {
+		font-size: 2rem;
 	}
 
 	.next-btn {
 		display: none;
 	}
 
-	.project-list {
-		width: 100%;
-		font-size: small;
-	}
-
 	.about-text1,
 	.about-text2 {
 		width: 100%;
 	}
+	.about-text2 {
+		background-image: linear-gradient(
+			to right,
+			rgba(0, 204, 255, 0.7) 0%,
+			var(--glow-text) 40%,
+			var(--glow-text) 100%
+		);
+	}
 
-	h1 {
-		padding: 1rem 2rem;
-		margin: 40px auto;
+	.project-list {
 		width: 100%;
+		padding: 1.5rem;
+		font-size: small;
+		opacity: 0.8;
+
+		margin-bottom: 15px;
+
+		border: solid 4px var(--text-color);
+
+		text-shadow: 0 0 5px var(--neon2), 0 0 10px var(--neon2),
+			0 0 20px var(--neon2), 0 0 40px var(--neon2), 0 0 60px var(--neon2);
+
+		box-shadow: 0 0 5px var(--neon2), 0 0 10px var(--neon2),
+			0 0 20px var(--neon2), inset 0 0 5px var(--neon2),
+			inset 0 0 10px var(--neon2), inset 0 0 20px var(--neon2);
 	}
 
-	h1,
-	h2 {
-		font-size: 3rem;
+	.project-list:hover {
+		opacity: 1;
 	}
 
-	h3 {
-		font-size: 2rem;
+	.project-img {
+		display: none;
+	}
+
+	.project-description {
+		background-image: linear-gradient(
+				to bottom,
+				rgba(234, 0, 255, 0.6),
+				transparent
+			),
+			linear-gradient(
+				to right,
+				rgb(0, 204, 255) 0%,
+				var(--glow-text) 20%,
+				var(--glow-text) 100%
+			);
+	}
+
+	.contact {
+		margin-right: 0;
 	}
 }
