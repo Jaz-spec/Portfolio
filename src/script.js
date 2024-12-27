@@ -30,3 +30,10 @@ pl4.addEventListener("mouseover", function changeImage4(event) {
 	projectImage.style.backgroundImage =
 		"linear-gradient( to right, rgba(0, 234, 255, 0.2) 0%, transparent 50%, transparent 100%), url(/src/recipe.png)";
 });
+
+let pl5 = document.querySelector("#pl5");
+pl5.addEventListener("mouseover", function changeImage5(event) {
+	event.preventDefault();
+	projectImage.style.backgroundImage =
+		"linear-gradient( to right, rgba(0, 234, 255, 0.2) 0%, transparent 50%, transparent 100%), url(/src/game.png)";
+});
