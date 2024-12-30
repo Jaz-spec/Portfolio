@@ -283,6 +283,10 @@ h3 {
 	max-width: 80ch;
 }
 
+.description-button {
+	display: none;
+}
+
 /*CONTACT PAGE*/
 .contact {
 	margin-right: 400px;
@@ -307,7 +311,6 @@ h3 {
 	html {
 		overflow-y: scroll;
 		overflow-x: hidden;
-		scroll-snap-type: y proximity;
 		width: 100vw;
 	}
 
@@ -321,7 +324,6 @@ h3 {
 	}
 
 	.scroll-area {
-		scroll-snap-align: start;
 		height: 100dvh;
 		margin: 0 auto;
 		padding-top: 70px;
@@ -420,6 +422,23 @@ h3 {
 				var(--glow-text) 20%,
 				var(--glow-text) 100%
 			);
+		height: 13vh;
+	}
+
+	.description-button {
+		display: block;
+		color: var(--glow-text);
+		background-color: transparent;
+		border: solid 1px var(--glow-text);
+		border-radius: 5px;
+		width: 20%;
+		padding: 5px;
+		margin-top: 5px;
+	}
+
+	.btn-container {
+		display: flex;
+		justify-content: end;
 	}
 
 	.contact {
