@@ -307,7 +307,7 @@ h3 {
 	html {
 		overflow-y: scroll;
 		overflow-x: hidden;
-		scroll-snap-type: y mandatory;
+		scroll-snap-type: y proximity;
 		width: 100vw;
 	}
 
@@ -355,7 +355,7 @@ h3 {
 
 	h1,
 	h2 {
-		font-size: 3rem;
+		font-size: 2.5rem;
 		padding: 1rem;
 	}
 
@@ -370,6 +370,7 @@ h3 {
 	.about-text1,
 	.about-text2 {
 		width: 100%;
+		text-align: justify;
 	}
 	.about-text2 {
 		background-image: linear-gradient(
@@ -407,6 +408,7 @@ h3 {
 	}
 
 	.project-description {
+		text-align: justify;
 		background-image: linear-gradient(
 				to bottom,
 				rgba(234, 0, 255, 0.6),
