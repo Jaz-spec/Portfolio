@@ -10,7 +10,7 @@ let pl1 = document.querySelector("#pl1");
 pl1.addEventListener("mouseover", function changeImage1(event) {
 	event.preventDefault();
 	projectImage.style.backgroundImage =
-		"linear-gradient( to right, rgba(0, 204, 255, 0.2) 0%, transparent 50%, transparent 100%), url(weatherApp.png)";
+		"linear-gradient( to right, rgba(0, 204, 255, 0.2) 0%, transparent 50%, transparent 100%), url(images/weatherApp.png)";
 	projectDescription.innerHTML =
 		"I built this using JavaScript React. This has been one of my favorite projects to build as Iv'e particularly enjoyed building functional and interactive sites. To further improve this project, I'd like to use global states that allow the temperatures on the weekly forecast to be changeable to Fahrenheit. And I'd like to add graphs showing hourly data for precipitation and temperature. ";
 });
