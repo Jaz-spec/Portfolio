@@ -415,7 +415,7 @@ h3 {
 		background-image: linear-gradient(
 				to bottom,
 				rgba(234, 0, 255, 0.6) 0%,
-				transparent 35%
+				transparent 50%
 			),
 			linear-gradient(
 				to right,
@@ -431,17 +431,22 @@ h3 {
 		background-color: transparent;
 		border: solid 1px var(--glow-text);
 		border-radius: 5px;
-		width: 20%;
+		width: 25%;
 		padding: 5px;
-		margin-top: 5px;
+		margin: 5px;
 	}
 
 	.btn-container {
+		margin-top: 1vh;
 		display: flex;
 		justify-content: end;
 
 		background-clip: text;
 		color: transparent;
+	}
+
+	.note {
+		font-size: 1.2rem;
 	}
 
 	.contact {
