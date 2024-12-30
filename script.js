@@ -60,7 +60,6 @@ pl5.addEventListener("mouseover", function changeImage5(event) {
 });
 
 //changing description for phones
-
 let nextButton = document.querySelector("#descriptionButton");
 nextButton.addEventListener("click", changeDescription);
 
@@ -86,6 +85,7 @@ function changeDescription(event) {
 	}
 }
 
+//preventing a phone opening the game
 let mediaQuery = window.matchMedia("(width < 700px)");
 if (mediaQuery.matches) {
 	pl5.onclick = function (event) {
