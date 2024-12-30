@@ -60,6 +60,7 @@ pl5.addEventListener("mouseover", function changeImage5(event) {
 });
 
 //changing description for phones
+
 let nextButton = document.querySelector("#descriptionButton");
 nextButton.addEventListener("click", changeDescription);
 
@@ -83,4 +84,12 @@ function changeDescription(event) {
 		case "A":
 			projectDescription.innerHTML = weatherApp;
 	}
+}
+
+let mediaQuery = window.matchMedia("(width < 700px)");
+if (mediaQuery.matches) {
+	pl5.onclick = function (event) {
+		alert("Sorry, this only works on desktop");
+		return false;
+	};
 }
